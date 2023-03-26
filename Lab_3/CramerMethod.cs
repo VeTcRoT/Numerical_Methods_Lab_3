@@ -5,14 +5,14 @@ namespace Lab_3
 {
     public class CramerMethod
     {
-        public int[,] SystemMatrix { get; set; }
-        public int[] FreeMembersColumn { get; set; }
-        public CramerMethod(int[,] systemMatrix, int[] freeMembersColumn)
+        public double[,] SystemMatrix { get; set; }
+        public double[] FreeMembersColumn { get; set; }
+        public CramerMethod(double[,] systemMatrix, double[] freeMembersColumn)
         {
             SystemMatrix = systemMatrix;
             FreeMembersColumn = freeMembersColumn;
         }
-        private double GetDeterminant(int[,] matrix)
+        private double GetDeterminant(double[,] matrix)
         {
             double result = 0;
 
@@ -27,9 +27,9 @@ namespace Lab_3
             return result;
         }
 
-        private int[,] GetBuildedMatrix(int iteration = -1)
+        private double[,] GetBuildedMatrix(int iteration = -1)
         {
-            int[,] matrix = new int[3, 5];
+            double[,] matrix = new double[3, 5];
 
             for (int i = 0; i < matrix.GetUpperBound(0) + 1; i++)
             {
